@@ -5,7 +5,7 @@ package com.vincent_falzon.discreetlauncher.menu ;
 
 	This file is part of Discreet Launcher.
 
-	Copyright (C) 2019-2024 Vincent Falzon
+	Copyright (C) 2019-2025 Vincent Falzon
 
 	This program is free software: you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
@@ -71,8 +71,8 @@ public class DialogChangelog extends AlertDialog
 		ArrayList<String> changelog_files = new ArrayList<>() ;
 		try
 		{
-			// Retrieve the content of the folder
-			String folder = context.getString(R.string.changelog_folder) ;
+			// Select the proper changelog folder and retrieve its content
+			String folder = context.getString(R.string.menu_changelog).equals("Journal des changements") ? "changelog-fr" : "changelog-en" ;
 			String[] files = context.getAssets().list(folder) ;
 			if(files != null)
 				{

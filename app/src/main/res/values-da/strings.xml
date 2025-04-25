@@ -10,6 +10,8 @@
     <string name="license_link">https://gnu.org/licenses/gpl-3.0.txt</string>
     <string name="website_description">Foreslå forbedringer, rapporter problemer og støt projektet på</string>
     <string name="website_link">https://vincent-falzon.com</string>
+    <string name="privacy_policy_description">Privatlivspolitik</string>
+    <string name="privacy_policy_link">https://vincent-falzon.com/privacy-policy-discreet-launcher.html</string>
     <string name="translation_credit">Dansk oversættelse af Thomas Jensen</string>
 
     <!-- Main menu -->
@@ -164,6 +166,8 @@
     <string name="set_text_color_favorites">Favoritter tekst</string>
     <string name="set_background_color_drawer">App skuffe baggrund</string>
     <string name="set_text_color_drawer">App skuffe tekst</string>
+    <string name="set_background_color_folders">Folders background</string>
+    <string name="set_text_color_folders">Folders text</string>
     <string name="set_clock_color">Farve</string>
     <string name="set_clock_shadow_color">Tekst skyggefarve</string>
     <string name="set_icon_pack_primary">Primær</string>
@@ -186,7 +190,7 @@
     <!-- Notification -->
     <string name="set_notification">Meddelelse om adgang til favoritter</string>
     <string name="set_notification_help">Bruger et gennemsigtigt ikon</string>
-    <string name="set_notification_warning_disabled">Notifications are disabled by system settings</string>
+    <string name="set_notification_warning_disabled">Meddelelser er deaktiveret af systemindstillinger</string>
     <string name="notification_text">Favoritter</string>
 
     <!-- Forced orientation -->
@@ -205,7 +209,7 @@
     <string name="target_close_favorites">Luk\nfavoritter</string>
     <string name="target_open_apps">Åbn\napps</string>
     <string name="target_close_apps">Luk\napps</string>
-    <string name="help_touch_targets">Swipe down to display the menu button, you can enable touch targets in the Operation menu</string><!-- (home screen TTS description for accessibility) -->
+    <string name="help_touch_targets">Stryg ned for at få vist menuknappen. Du kan aktivere touch-mål i menuen Betjening</string><!-- (home screen TTS description for accessibility) -->
 
     <!-- Other operation settings -->
     <string name="set_as_default_launcher">Sæt som standard launcher</string>
@@ -248,7 +252,6 @@
     <!-- ========== Changelog ========== -->
 
     <string name="changelog_mentions">\"@pseudo\" angiver den bruger, der foreslog ideen eller rapporterede fejlen</string>
-    <string name="changelog_folder">changelog-en</string><!-- (this value must be either "changelog-en" or "changelog-fr") -->
     <string name="error_changelog_missing_folder">Kunne ikke finde mappen med liste med opdateringer</string>
     <string name="error_changelog_missing_file">Kunne ikke åbne %1$s</string>
 

@@ -5,7 +5,7 @@ package com.vincent_falzon.discreetlauncher.settings ;
 
 	This file is part of Discreet Launcher.
 
-	Copyright (C) 2019-2024 Vincent Falzon
+	Copyright (C) 2019-2025 Vincent Falzon
 
 	This program is free software: you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
@@ -157,6 +157,8 @@ public class ActivityExportImport extends AppCompatActivity implements View.OnCl
 		exportedData.add(exportStringSetting(Constants.TEXT_COLOR_FAVORITES)) ;
 		exportedData.add(exportStringSetting(Constants.BACKGROUND_COLOR_DRAWER)) ;
 		exportedData.add(exportStringSetting(Constants.TEXT_COLOR_DRAWER)) ;
+		exportedData.add(exportStringSetting(Constants.BACKGROUND_COLOR_FOLDERS)) ;
+		exportedData.add(exportStringSetting(Constants.TEXT_COLOR_FOLDERS)) ;
 		exportedData.add(exportStringSetting(Constants.CLOCK_FORMAT)) ;
 		exportedData.add(exportStringSetting(Constants.CLOCK_COLOR)) ;
 		exportedData.add(exportStringSetting(Constants.CLOCK_SHADOW_COLOR)) ;
@@ -301,6 +303,8 @@ public class ActivityExportImport extends AppCompatActivity implements View.OnCl
 				else if(target.equals(Constants.TEXT_COLOR_FAVORITES)) editor.putString(target, value) ;
 				else if(target.equals(Constants.BACKGROUND_COLOR_DRAWER)) editor.putString(target, value) ;
 				else if(target.equals(Constants.TEXT_COLOR_DRAWER)) editor.putString(target, value) ;
+				else if(target.equals(Constants.BACKGROUND_COLOR_FOLDERS)) editor.putString(target, value) ;
+				else if(target.equals(Constants.TEXT_COLOR_FOLDERS)) editor.putString(target, value) ;
 				else if(target.equals(Constants.OLD_DISPLAY_CLOCK))
 				{
 					// Note the configuration of the old clock setting (v4.0.0 - 05/06/2021, to remove later)

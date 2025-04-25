@@ -10,6 +10,8 @@
     <string name="license_link">https://gnu.org/licenses/gpl-3.0.txt</string>
     <string name="website_description">Suggérez des améliorations, signalez les problèmes, et soutenez le projet sur</string>
     <string name="website_link">https://vincent-falzon.com</string>
+    <string name="privacy_policy_description">Politique de confidentialité</string>
+    <string name="privacy_policy_link">https://vincent-falzon.com/privacy-policy-discreet-launcher.html</string>
     <string name="translation_credit"><!-- Not used for French translation --></string>
 
     <!-- Main menu -->
@@ -164,6 +166,8 @@
     <string name="set_text_color_favorites">Texte des favoris</string>
     <string name="set_background_color_drawer">Fond du tiroir d\'applications</string>
     <string name="set_text_color_drawer">Texte du tiroir d\'applications</string>
+    <string name="set_background_color_folders">Fond des dossiers</string>
+    <string name="set_text_color_folders">Texte des dossiers</string>
     <string name="set_clock_color">Couleur</string>
     <string name="set_clock_shadow_color">Couleur de l\'ombre du texte</string>
     <string name="set_icon_pack_primary">Primaire</string>
@@ -248,7 +252,6 @@
     <!-- ========== Changelog ========== -->
 
     <string name="changelog_mentions">\"@pseudo\" indique l\'utilisateur(trice) qui a suggéré l\'idée ou signalé le bug</string>
-    <string name="changelog_folder">changelog-fr</string><!-- (this value must be either "changelog-en" or "changelog-fr") -->
     <string name="error_changelog_missing_folder">Impossible de trouver le dossier du journal des changements</string>
     <string name="error_changelog_missing_file">Impossible d\'ouvrir %1$s</string>
 

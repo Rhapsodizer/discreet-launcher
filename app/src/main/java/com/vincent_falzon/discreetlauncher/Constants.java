@@ -5,7 +5,7 @@ package com.vincent_falzon.discreetlauncher ;
 
 	This file is part of Discreet Launcher.
 
-	Copyright (C) 2019-2024 Vincent Falzon
+	Copyright (C) 2019-2025 Vincent Falzon
 
 	This program is free software: you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
@@ -62,6 +62,8 @@ public interface Constants
 	String TEXT_COLOR_FAVORITES = "text_color_favorites" ;
 	String BACKGROUND_COLOR_DRAWER = "background_color_drawer" ;
 	String TEXT_COLOR_DRAWER = "text_color_drawer" ;
+	String BACKGROUND_COLOR_FOLDERS = "background_color_folders" ;
+	String TEXT_COLOR_FOLDERS = "text_color_folders" ;
 	String CLOCK_FORMAT = "clock_format" ;
 	String CLOCK_COLOR = "clock_color" ;
 	String CLOCK_SHADOW_COLOR = "clock_shadow_color" ;
@@ -86,6 +88,7 @@ public interface Constants
 
 	// Constants represetings fallback colors
 	String COLOR_FOR_OVERLAY = "#66000000" ;
+	String COLOR_FOR_DENSE_OVERLAY = "#EB333333" ;
 	String COLOR_FOR_TEXT_ON_OVERLAY = "#FFFFFFFF" ;
 	String COLOR_TRANSPARENT = "#00000000" ;
 
@@ -99,6 +102,6 @@ public interface Constants
 	String OLD_FORCE_PORTRAIT = "force_portrait" ;
 	// Removed in v5.2.0 - 13/11/2021 (splitted between favorites and app drawer)
 	String OLD_BACKGROUND_COLOR = "background_color" ;
-	// Removed in v7.6.0 - xx/08/2024 (setting converted from seekbar to list)
+	// Removed in v7.6.0 - 24/08/2024 (setting converted from seekbar to list)
 	String OLD_ICON_SIZE = "icon_size" ;
 }

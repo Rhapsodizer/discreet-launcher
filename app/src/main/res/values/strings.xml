@@ -10,6 +10,8 @@
     <string name="license_link">https://gnu.org/licenses/gpl-3.0.txt</string>
     <string name="website_description">Suggest improvements, report issues, and support the project on</string>
     <string name="website_link">https://vincent-falzon.com</string>
+    <string name="privacy_policy_description">Privacy policy</string>
+    <string name="privacy_policy_link">https://vincent-falzon.com/privacy-policy-discreet-launcher.html</string>
     <string name="translation_credit"><!-- Replace this comment with a translation of: "([Locale] translation by [first and last names])" --></string>
 
     <!-- Main menu -->
@@ -164,6 +166,8 @@
     <string name="set_text_color_favorites">Favorites text</string>
     <string name="set_background_color_drawer">App drawer background</string>
     <string name="set_text_color_drawer">App drawer text</string>
+    <string name="set_background_color_folders">Folders background</string>
+    <string name="set_text_color_folders">Folders text</string>
     <string name="set_clock_color">Color</string>
     <string name="set_clock_shadow_color">Text shadow color</string>
     <string name="set_icon_pack_primary">Primary</string>
@@ -248,7 +252,6 @@
     <!-- ========== Changelog ========== -->
 
     <string name="changelog_mentions">\"@pseudo\" indicates the user who suggested the idea or reported the bug</string>
-    <string name="changelog_folder">changelog-en</string><!-- (this value must be either "changelog-en" or "changelog-fr") -->
     <string name="error_changelog_missing_folder">Could not find the changelog folder</string>
     <string name="error_changelog_missing_file">Could not open %1$s</string>
 

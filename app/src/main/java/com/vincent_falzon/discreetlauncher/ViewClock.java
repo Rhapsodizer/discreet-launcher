@@ -5,7 +5,7 @@ package com.vincent_falzon.discreetlauncher ;
 
 	This file is part of Discreet Launcher.
 
-	Copyright (C) 2019-2024 Vincent Falzon
+	Copyright (C) 2019-2025 Vincent Falzon
 
 	This program is free software: you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
@@ -38,6 +38,7 @@ import android.text.TextPaint ;
 import android.util.AttributeSet ;
 import android.view.MotionEvent ;
 import android.view.View ;
+import androidx.annotation.NonNull ;
 import androidx.preference.PreferenceManager ;
 import java.text.DateFormat ;
 import java.text.SimpleDateFormat ;
@@ -133,7 +134,7 @@ public class ViewClock extends View implements View.OnTouchListener
 	 * Called when the view must be (re)drawn.
 	 */
 	@Override
-	protected void onDraw(Canvas canvas)
+	protected void onDraw(@NonNull Canvas canvas)
 	{
 		// Let the parent actions be performed
 		super.onDraw(canvas) ;
@@ -247,7 +248,7 @@ public class ViewClock extends View implements View.OnTouchListener
 				while((rect_date.width() > (view_width - 2 * padding)) && (date_text_size_factor > 0))
 				{
 					// Progressively lower the size of the date text size
-					date_text_size_factor -= 0.01 ;
+					date_text_size_factor -= 0.01f ;
 					textClock.setTextSize(time_text_size * date_text_size_factor) ;
 					textClock.getTextBounds(date_text, 0, date_text.length(), rect_date) ;
 				}
@@ -265,7 +266,7 @@ public class ViewClock extends View implements View.OnTouchListener
 				// Draw the time text
 				textClock.setFakeBoldText(false) ;
 				textClock.setTextSize(time_text_size) ;
-				canvas.drawText(time_text, offset_x, offset_y, textClock) ;
+				canvas.drawText(time_text, offset_x - rect_time.left, offset_y, textClock) ;
 				rect_time.offset(Math.round(offset_x), Math.round(offset_y)) ;
 
 				// Define the horizontal offset of the date text
@@ -276,7 +277,7 @@ public class ViewClock extends View implements View.OnTouchListener
 				// Draw the date text
 				textClock.setFakeBoldText(true) ;
 				textClock.setTextSize(time_text_size * date_text_size_factor) ;
-				canvas.drawText(date_text, offset_x, offset_y + 0.5f * padding + rect_date.height(), textClock) ;
+				canvas.drawText(date_text, offset_x - rect_date.left, offset_y + 0.5f * padding + rect_date.height(), textClock) ;
 				rect_date.offset(Math.round(offset_x), Math.round(offset_y + 0.5f * padding + rect_date.height())) ;
 			}
 			else if(clock_format.startsWith("date"))
@@ -294,7 +295,7 @@ public class ViewClock extends View implements View.OnTouchListener
 				while((rect_date.width() > (view_width - 2 * padding)) && (date_text_size_factor > 0))
 				{
 					// Progressively lower the size of the date text size
-					date_text_size_factor -= 0.01 ;
+					date_text_size_factor -= 0.01f ;
 					textClock.setTextSize(time_text_size * date_text_size_factor) ;
 					textClock.getTextBounds(date_text, 0, date_text.length(), rect_date) ;
 				}
@@ -312,7 +313,7 @@ public class ViewClock extends View implements View.OnTouchListener
 				// Draw the date text
 				textClock.setFakeBoldText(true) ;
 				textClock.setTextSize(time_text_size * date_text_size_factor) ;
-				canvas.drawText(date_text, offset_x, offset_y, textClock) ;
+				canvas.drawText(date_text, offset_x - rect_date.left, offset_y, textClock) ;
 				rect_date.offset(Math.round(offset_x), Math.round(offset_y)) ;
 			}
 			else
@@ -342,7 +343,7 @@ public class ViewClock extends View implements View.OnTouchListener
 					else offset_x = view_width / 2f - rect_time.width() / 2f ;
 
 				// Draw the time text
-				canvas.drawText(time_text, offset_x, offset_y, textClock) ;
+				canvas.drawText(time_text, offset_x - rect_time.left, offset_y, textClock) ;
 				rect_time.offset(Math.round(offset_x), Math.round(offset_y)) ;
 			}
 	}

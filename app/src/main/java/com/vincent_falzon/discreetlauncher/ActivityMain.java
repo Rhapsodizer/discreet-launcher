@@ -5,7 +5,7 @@ package com.vincent_falzon.discreetlauncher ;
 
 	This file is part of Discreet Launcher.
 
-	Copyright (C) 2019-2024 Vincent Falzon
+	Copyright (C) 2019-2025 Vincent Falzon
 
 	This program is free software: you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
@@ -38,6 +38,7 @@ import androidx.annotation.NonNull ;
 import androidx.appcompat.app.AppCompatActivity ;
 import androidx.appcompat.app.AppCompatDelegate ;
 import androidx.appcompat.content.res.AppCompatResources ;
+import androidx.core.content.ContextCompat ;
 import androidx.core.graphics.drawable.DrawableCompat ;
 import androidx.core.view.GestureDetectorCompat ;
 import androidx.preference.PreferenceManager ;
@@ -175,9 +176,9 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
 		// Define the width of an application item
 		int app_size_pixels = Utils.getIconSize(this, settings) ;
 		int padding_pixels ;
-		if(settings.getBoolean(Constants.HIDE_APP_NAMES, false)
-				&& settings.getBoolean(Constants.REMOVE_PADDING, false)) padding_pixels = Math.round(app_size_pixels / 24f) ;
-			else padding_pixels = Math.round(app_size_pixels / 1.5f) ;
+		if(settings.getBoolean(Constants.HIDE_APP_NAMES, false))
+				padding_pixels = settings.getBoolean(Constants.REMOVE_PADDING, false) ? 0 : Math.round(25 * density) ;
+			else padding_pixels = Math.round(Math.min(app_size_pixels / 1.5f, 32 * density)) ;
 		application_width = app_size_pixels + padding_pixels ;
 
 		// Update the display according to settings
@@ -436,11 +437,11 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
 
 				// If the option is selected, make the status bar fully transparent
 				if(settings.getBoolean(Constants.TRANSPARENT_STATUS_BAR, true))
-						getWindow().setStatusBarColor(getResources().getColor(R.color.transparent)) ;
+						getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.transparent)) ;
 					else getWindow().setStatusBarColor(Utils.getColor(settings, Constants.BACKGROUND_COLOR_FAVORITES, Constants.COLOR_FOR_OVERLAY)) ;
 
 				// Make the navigation bar transparent
-				getWindow().setNavigationBarColor(getResources().getColor(R.color.transparent)) ;
+				getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.transparent)) ;
 			}
 	}
 
@@ -487,13 +488,13 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
 
 				// If the option is selected, make the status bar fully transparent
 				if(settings.getBoolean(Constants.TRANSPARENT_STATUS_BAR, true))
-						getWindow().setStatusBarColor(getResources().getColor(R.color.transparent)) ;
+						getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.transparent)) ;
 					else getWindow().setStatusBarColor(favorites_background_color) ;
 
 				// Make the navigation bar transparent, unless in reverse interface with favorites always shown
 				if(reverse_interface && settings.getBoolean(Constants.ALWAYS_SHOW_FAVORITES, false))
 						getWindow().setNavigationBarColor(favorites_background_color) ;
-					else getWindow().setNavigationBarColor(getResources().getColor(R.color.transparent)) ;
+					else getWindow().setNavigationBarColor(ContextCompat.getColor(this, R.color.transparent)) ;
 			}
 	}
 
@@ -788,7 +789,7 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
 		 * Implemented because all gestures start with an onDown() message.
 		 */
 		@Override
-		public boolean onDown(MotionEvent event)
+		public boolean onDown(@NonNull MotionEvent event)
 		{
 			return true ;
 		}
@@ -798,13 +799,13 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
 		 * Detect a gesture over a distance.
 		 */
 		@Override
-		public boolean onFling(MotionEvent event1, MotionEvent event2, float velocityX, float velocityY)
+		public boolean onFling(MotionEvent event1, @NonNull MotionEvent event2, float velocityX, float velocityY)
 		{
 			// Ignore the gesture if the applications drawer is opened
 			if(drawer.getVisibility() == View.VISIBLE) return false ;
 
 			// Ignore incomplete gestures (may happen due to the interactive clock)
-			if((event1 == null) || (event2 == null)) return false ;
+			if(event1 == null) return false ;
 
 			// Calculate the traveled distances on both axes
 			float x_distance = event1.getX() - event2.getX() ;
@@ -860,7 +861,7 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
 		 * Detect a double-tap.
 		 */
 		@Override
-		public boolean onDoubleTap(MotionEvent event)
+		public boolean onDoubleTap(@NonNull MotionEvent event)
 		{
 			return Utils.searchAndStartApplication(homeScreen, settings, Constants.DOUBLE_TAP) ;
 		}
@@ -870,7 +871,7 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
 		 * Detect a long click on the home screen.
 		 */
 		@Override
-		public void onLongPress(MotionEvent event)
+		public void onLongPress(@NonNull MotionEvent event)
 		{
 			// Update the display according to settings
 			maybeHideSystemBars(false) ;

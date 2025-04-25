@@ -5,7 +5,7 @@ package com.vincent_falzon.discreetlauncher ;
 
 	This file is part of Discreet Launcher.
 
-	Copyright (C) 2019-2024 Vincent Falzon
+	Copyright (C) 2019-2025 Vincent Falzon
 
 	This program is free software: you can redistribute it and/or modify
 	it under the terms of the GNU General Public License as published by
@@ -79,7 +79,7 @@ public abstract class Utils
 	 */
 	public static int getIconSize(Context context, SharedPreferences settings)
 	{
-		// Check if the legacy icon size setting is still used (v7.6.0 - xx/08/2024, to remove later)
+		// Check if the legacy icon size setting is still used (v7.6.0 - 24/08/2024, to remove later)
 		int legacy_icon_size = settings.getInt(Constants.OLD_ICON_SIZE, 0) ;
 		if(legacy_icon_size != 0)
 			{
